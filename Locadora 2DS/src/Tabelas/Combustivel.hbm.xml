@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/08/2023 20:30:25 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Tabelas.Combustivel" table="combustivel" catalog="ruama_carol_2ds" optimistic-lock="version">
+        <id name="tipo" type="char">
+            <column name="tipo" length="1" />
+            <generator class="assigned" />
+        </id>
+        <property name="combust" type="string">
+            <column name="combust" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

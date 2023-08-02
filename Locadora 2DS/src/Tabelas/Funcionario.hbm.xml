@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/08/2023 20:30:25 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Tabelas.Funcionario" table="funcionario" catalog="ruama_carol_2ds" optimistic-lock="version">
+        <id name="matricula" type="int">
+            <column name="matricula" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="string">
+            <column name="nome" length="50" />
+        </property>
+        <property name="depto" type="java.lang.Integer">
+            <column name="depto" />
+        </property>
+        <property name="salario" type="big_decimal">
+            <column name="salario" precision="8" />
+        </property>
+        <property name="admissao" type="date">
+            <column name="admissao" length="10" />
+        </property>
+        <property name="filho" type="java.lang.Integer">
+            <column name="filho" />
+        </property>
+        <property name="sexo" type="java.lang.Character">
+            <column name="sexo" length="1" />
+        </property>
+        <property name="ativo" type="java.lang.Boolean">
+            <column name="ativo" />
+        </property>
+        <set name="usuarios" table="usuario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="mat_func" />
+            </key>
+            <one-to-many class="Tabelas.Usuario" />
+        </set>
+        <set name="oses" table="os" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="mat_funcio" not-null="true" />
+            </key>
+            <one-to-many class="Tabelas.Os" />
+        </set>
+    </class>
+</hibernate-mapping>

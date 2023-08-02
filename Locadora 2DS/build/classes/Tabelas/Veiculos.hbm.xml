@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/08/2023 20:30:25 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Tabelas.Veiculos" table="veiculos" catalog="ruama_carol_2ds" optimistic-lock="version">
+        <id name="placa" type="string">
+            <column name="placa" length="7" />
+            <generator class="assigned" />
+        </id>
+        <property name="marca" type="string">
+            <column name="marca" length="15" />
+        </property>
+        <property name="modelo" type="string">
+            <column name="modelo" length="15" />
+        </property>
+        <property name="cor" type="string">
+            <column name="cor" length="15" />
+        </property>
+        <property name="ano" type="java.lang.Integer">
+            <column name="ano" />
+        </property>
+        <property name="comb" type="java.lang.Character">
+            <column name="comb" length="1" />
+        </property>
+        <property name="cat" type="java.lang.Integer">
+            <column name="cat" />
+        </property>
+        <property name="statusAlocado" type="java.lang.Boolean">
+            <column name="status_alocado" />
+        </property>
+        <set name="oses" table="os" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="placa_veiculo" length="7" not-null="true" />
+            </key>
+            <one-to-many class="Tabelas.Os" />
+        </set>
+    </class>
+</hibernate-mapping>

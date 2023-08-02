@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/08/2023 20:30:25 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Tabelas.Os" table="os" catalog="ruama_carol_2ds" optimistic-lock="version">
+        <id name="numOs" type="int">
+            <column name="num_os" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="funcionario" class="Tabelas.Funcionario" fetch="select">
+            <column name="mat_funcio" not-null="true" />
+        </many-to-one>
+        <many-to-one name="veiculos" class="Tabelas.Veiculos" fetch="select">
+            <column name="placa_veiculo" length="7" not-null="true" />
+        </many-to-one>
+        <property name="cpfClient" type="int">
+            <column name="cpf_client" not-null="true" />
+        </property>
+        <property name="dataRetirada" type="date">
+            <column name="data_retirada" length="10" not-null="true" />
+        </property>
+        <property name="dataDevolucao" type="date">
+            <column name="data_devolucao" length="10" />
+        </property>
+        <property name="kmRetirada" type="big_decimal">
+            <column name="km_retirada" precision="8" not-null="true" />
+        </property>
+        <property name="kmDevolucao" type="big_decimal">
+            <column name="km_devolucao" precision="8" not-null="true" />
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true" />
+        </property>
+        <property name="valorTotal" type="big_decimal">
+            <column name="valor_total" precision="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/08/2023 20:30:25 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Tabelas.Categoria" table="categoria" catalog="ruama_carol_2ds" optimistic-lock="version">
+        <id name="cod" type="int">
+            <column name="cod" />
+            <generator class="assigned" />
+        </id>
+        <property name="cate" type="string">
+            <column name="cate" length="20" />
+        </property>
+        <property name="valorKm" type="big_decimal">
+            <column name="valor_km" precision="8" />
+        </property>
+    </class>
+</hibernate-mapping>

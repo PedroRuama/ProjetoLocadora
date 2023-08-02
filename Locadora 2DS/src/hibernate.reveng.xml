@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="Ruama_Carol_2DS"/>
+  <table-filter match-name="categoria"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="veiculos"/>
+  <table-filter match-name="funcionario"/>
+  <table-filter match-name="client"/>
+  <table-filter match-name="departamento"/>
+  <table-filter match-name="os"/>
+  <table-filter match-name="combustivel"/>
+</hibernate-reverse-engineering>

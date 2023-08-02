@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/08/2023 20:30:25 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Tabelas.Client" table="client" catalog="ruama_carol_2ds" optimistic-lock="version">
+        <id name="cpf" type="int">
+            <column name="cpf" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="string">
+            <column name="nome" length="40" />
+        </property>
+        <property name="ende" type="string">
+            <column name="ende" length="60" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="15" />
+        </property>
+        <property name="cidade" type="string">
+            <column name="cidade" length="60" />
+        </property>
+        <property name="dataNasc" type="date">
+            <column name="data_nasc" length="10" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>
